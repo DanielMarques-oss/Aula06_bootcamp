@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "aula06-bootcamp"
+version = "0.1.0"
+description = ""
+authors = ["Danie Marques de Almeida <danielmarques.enfermagem@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+blue = "^0.9.1"
+pre-commit = "^3.7.1"
+taskipy = "^1.13.0"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.taskipy.tasks]
+format = """
+isort main.py
+blue main.py
+flake8 main.py
+"""
